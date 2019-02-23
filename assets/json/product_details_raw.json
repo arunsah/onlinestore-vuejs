@@ -1,0 +1,174 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Redmi Y2",
+            "brand": "Redmi",
+            "model": "y2",
+            "color": "black",
+            "mrp": 10499,
+            "discount": 0.20,
+            "ram": 3,
+            "rom": 32,
+            "display": 5.99,
+            "front_camera": [
+                16
+            ],
+            "rear_camera": [
+                12,
+                5
+            ],
+            "processor": "Qualcomm Snapdragon 625 Processor",
+            "description": "Sleek, powerful, and feature-filled - the Redmi Y2 is simply a cut above your run-of-the-mill smartphone.",
+            "image": "redmi_y2.jpeg",
+            "in_store": 200,
+            "colors": [
+                {
+                    "id": 1,
+                    "name": "black",
+                    "color_code": "#000000"
+                },
+                {
+                    "id": 2,
+                    "name": "rose gold",
+                    "color_code": "#b76e79"
+                },
+                {
+                    "id": 3,
+                    "name": "metallic gold",
+                    "color_code": "#d4af37"
+                },
+                {
+                    "id": 4,
+                    "name": "blue",
+                    "color_code": "#1b3f8b"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Redmi Note 5 Pro",
+            "brand": "Redmi",
+            "model": "Note 5 Pro",
+            "color": "gold",
+            "mrp": 16999,
+            "discount": 0.25,
+            "ram": 6,
+            "rom": 64,
+            "display": 5.99,
+            "front_camera": [
+                20
+            ],
+            "rear_camera": [
+                12,
+                5
+            ],
+            "processor": "Qualcomm Snapdragon 636 Processor",
+            "description": "Take photos, make calls or watch videos easily on this Redmi Note 5 Pro mobile phone.",
+            "image": "redmi_note5_pro.jpeg",
+            "in_store": 58,
+            "colors": [
+                {
+                    "id": 1,
+                    "name": "black",
+                    "color_code": "#000000"
+                },
+                {
+                    "id": 3,
+                    "name": "metallic gold",
+                    "color_code": "#d4af37"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Motorola One Power",
+            "brand": "Motorola",
+            "model": "One Power",
+            "color": "black",
+            "mrp": 18999,
+            "discount": 0.26,
+            "ram": 4,
+            "rom": 64,
+            "display": 6.2,
+            "front_camera": [
+                12
+            ],
+            "rear_camera": [
+                16,
+                5
+            ],
+            "processor": "Qualcomm Snapdragon 636 Processor",
+            "description": "Indulge in a long-lasting entertainment experience with the Motorola One Power smartphone.",
+            "image": "motorola_one_power.jpeg",
+            "in_store": 20,
+            "colors": [
+                {
+                    "id": 1,
+                    "name": "black",
+                    "color_code": "#000000"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "OPPO K1",
+            "brand": "OPPO",
+            "model": "K1",
+            "color": "black",
+            "mrp": 18990,
+            "discount": 0.10,
+            "ram": 4,
+            "rom": 64,
+            "display": 6.41,
+            "front_camera": [
+                25
+            ],
+            "rear_camera": [
+                16,
+                2
+            ],
+            "processor": "Qualcomm Snapdragon 660 Processor",
+            "description": "Indulge in a long-lasting entertainment experience with the Motorola One Power smartphone.",
+            "image": "oppo_k1.jpeg",
+            "in_store": 220,
+            "colors": [
+                {
+                    "id": 1,
+                    "name": "piano black",
+                    "color_code": "#000000"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "VIVO V9 Pro",
+            "brand": "VIVO",
+            "model": "V9 Pro",
+            "color": "black",
+            "mrp": 17990,
+            "discount": 0.22,
+            "ram": 4,
+            "rom": 64,
+            "display": 6.30,
+            "front_camera": [
+                16
+            ],
+            "rear_camera": [
+                13,
+                2
+            ],
+            "processor": "Qualcomm Snapdragon 660 Processor",
+            "description": "Up your picture-taking game with the Vivo V9 Pro smartphone.",
+            "image": "vivo_v9.jpeg",
+            "in_store": 220,
+            "colors": [
+                {
+                    "id": 1,
+                    "name": "black",
+                    "color_code": "#000000"
+                }
+            ]
+        }
+    ]
+}
