@@ -10,8 +10,16 @@ var online_store_product = Vue.component("Product", {
                 <h1>{{id}}</h1>
                 <p> {{product.name}} </p>
                 <p> {{product.description}} </p>
+                <p> RAM: {{product.ram}} GB,  ROM: {{product.rom}} GB,  Screen: {{product.display}} inches</p>
+                <p> MRP: INR {{product.mrp}}, Discount: {{product.discount * 100}}%</p>
+                <p> Today's Price: INR {{product.mrp - (product.mrp * product.discount)}}</p>
+
+                <button class="current-cart-button" @click="addToCart">+</button>
+                <input class="current-cart" type="number" v-model.number="localcart" />
+                <button class="current-cart-button" @click="removeFromCart" :disabled="this.localcart < 1" :class="{disabledButton: this.localcart < 1}">-</button>
             </div>
 
+          
             
             <div>
             <h2> Product Reviews </h2>
@@ -24,8 +32,8 @@ var online_store_product = Vue.component("Product", {
                 </li>
             </ul>
 
-            <button class="button" @click="showReviewForm = !showReviewForm">Show/Hide Review Form</buttton>
-            <ProductReview v-if="showReviewForm" @review-submitted="addReview"></ProductReview>
+           
+            <ProductReview @review-submitted="addReview"></ProductReview>
             </div>
 
         </div>
@@ -37,7 +45,7 @@ var online_store_product = Vue.component("Product", {
         product: { type: Object }
     },
     data() {
-        return { reviews: [], showReviewForm:false };
+        return { reviews: [], showReviewForm: false, localcart: 0 };
     },
     computed: { // results are saved untill dependencies are chenaged        
         image_src() {
@@ -48,6 +56,15 @@ var online_store_product = Vue.component("Product", {
     methods: {
         addReview(productReview) {
             this.reviews.push(productReview);
+        },
+        addToCart() { 
+            this.localcart += 1; 
+            this.$emit('add-to-cart', this.product.id);
+        },
+        removeFromCart() {
+            if (this.localcart < 1) return;
+            this.localcart -= 1;
+            this.$emit('remove-from-cart', this.product.id);
         }
     }
 });

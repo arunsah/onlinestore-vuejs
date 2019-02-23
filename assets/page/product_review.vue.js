@@ -5,13 +5,7 @@ var online_store_product = Vue.component("ProductReview", {
             <p>
                 <label for="userName">Name: </label>
                 <input type="text" id="userName" name="userName" placeholder="Enter your name" v-model="userName" />
-            </p>
-            <p>
-                <label for="review">Review: </label>
-                <textarea id="review" name="review" placeholder="Enter your review" v-model="review">
-                </textarea>
-            </p>
-            <p>
+
                 <label for="rating">Rating: </label>
                 <select id="rating" name="rating" placeholder="Enter your name" v-model.number="rating">
                     <option>5</option>
@@ -20,9 +14,24 @@ var online_store_product = Vue.component("ProductReview", {
                     <option>2</option>
                     <option>1</option>
                 </select>
+                
             </p>
             <p>
-                <input type="submit" value="Submit Review" />
+                <label for="review">Review: </label>
+                <textarea id="review" name="review" placeholder="Enter your review" v-model="review">
+                </textarea>
+            </p>
+           
+            <p>
+            <span>Would you recommend this product?</span> 
+            <br/>
+                <label for="recommendation_yes">Yes: </label>
+                <input type="radio" id="recommendation_yes" name="recommendation" />
+                <label for="recommendation_no">No: </label>
+                <input type="radio" id="recommendation_no" name="recommendation" />
+            </p>
+            <p>
+                <input class="button" type="submit" value="Submit Review" />
             </p>
         </form>
     </div>

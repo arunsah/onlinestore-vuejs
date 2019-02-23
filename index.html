@@ -44,7 +44,13 @@
         <br />
         <br />
 
-        <Product v-for="item, index in products" :product="item" :key="index"></Product>
+        <Product 
+        v-for="item, index in products" 
+        :product="item" 
+        :key="index"
+        @add-to-cart="addToCart"
+        @remove-from-cart="removeFromCart"
+        ></Product>
     </div>
     <script src="/assets/page/cart.vue.js"></script>
     <script src="/assets/page/product_review.vue.js"></script>

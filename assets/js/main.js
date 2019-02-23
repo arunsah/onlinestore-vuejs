@@ -13,6 +13,12 @@ const app = new Vue({
             this.productId = productId;
             this.currentProduct = this.products[productId];
             this.cartProduct.push(this.productId);
+        },
+        addToCart(productId){
+            console.log("adding : " + productId);
+        },
+        removeFromCart(productId){
+            console.log("removing : " + productId);
         }
     },
     created() {
