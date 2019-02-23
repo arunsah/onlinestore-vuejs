@@ -1,45 +1,34 @@
 const app = new Vue({
     el: '#app',
     data: {
-        store_type: 'Fresh Fruits',
-        //image_src: '/fruits_img/apple.jpg',
-        cart: 0,
-        fruits: [],
-        productId: 1,
-        currentFruit: {}
+        products: [],
+        productId: 0,
+        currentProduct: {},
+        cartProduct:[]
     },
 
     methods: {
-        addToCart: function () {
-            if (this.currentFruit.box <= 0){ inStock = false; return;}
-            this.cart += 1;
-            this.currentFruit.box -= 1;
-        },
-        removeFromCart: function () {
-            if (this.cart <= 0) return;
-            this.cart -= 1;
-            this.currentFruit.box += 1;
-        },
         setProductId(productId) {
-            //alert(productId);
+            console.log(productId);
             this.productId = productId;
-            this.image_src = '/fruits_img/' + this.fruits[productId - 1].img;
-            this.currentFruit = this.fruits[productId - 1];
+            this.currentProduct = this.products[productId];
+            this.cartProduct.push(this.productId);
         }
     },
     created() {
 
-        fetch('https://api.myjson.com/bins/cfn66')// 
+        fetch('/assets/json/cellphone.json')
             .then(response => response.json())
             .then(json => {
-                this.fruits = json.fruits;
-                this.setProductId(1);
-            });
+                //console.log(json);
+                this.products = json.products;
+            })
+            .catch(error => console.error(error));  ;
 
     },
 
     computed:{ // results are saved untill dependencies are chenaged
-        productRate(){
+        /* productRate(){
             return 'Price: ' +this.currentFruit.price+
              ' for ' + this.currentFruit.quantity;
         },
@@ -47,8 +36,8 @@ const app = new Vue({
             return this.currentFruit.box > 0;
         },
         image_src(){
-            return '/fruits_img/' + this.currentFruit.img;
-        }
+            return '/products_img/' + this.currentFruit.img;
+        } */
     }
 
 

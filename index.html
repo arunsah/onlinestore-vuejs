@@ -23,14 +23,36 @@
     <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.js"></script> 
     -->
 
-    <script src="/assets/js/main.js"></script>
+
 
 </head>
 
 <body>
-    <h1>
-        Hello World from Vue.js
-    </h1>
+    <div class="nav-bar">
+        <img class="header-img" src="/assets/logo/baseline_store_white_48dp.png" />
+        <span class="header-text">Online Store</span>
+    </div>
+
+    <div id="app">
+        <div class="product-list">
+            <span class="popular_product">Popular: </span>
+            <span class="item noselect" v-for="item, index in products" :key="index"
+                @click="setProductId(item.id)">{{item.name}}</span>
+        </div>
+
+        <Cart :products="cartProduct"></Cart>
+        <br />
+        <br />
+
+        <Product v-for="item, index in products" :product="item" :key="index"></Product>
+    </div>
+    <script src="/assets/page/cart.vue.js"></script>
+    <script src="/assets/page/product_review.vue.js"></script>
+    <script src="/assets/page/product.vue.js"></script>
+    <script src="/assets/js/main.js"></script>
+
+    
+
 </body>
 
 </html>
