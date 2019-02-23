@@ -16,9 +16,14 @@ const app = new Vue({
         },
         addToCart(productId){
             console.log("adding : " + productId);
+            this.cartProduct.push(productId);
         },
         removeFromCart(productId){
             console.log("removing : " + productId);
+            var index = this.cartProduct.indexOf(productId);
+            if (index > -1) {
+                this.cartProduct.splice(index, 1);
+            }
         }
     },
     created() {

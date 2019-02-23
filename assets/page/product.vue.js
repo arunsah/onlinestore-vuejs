@@ -7,8 +7,8 @@ var online_store_product = Vue.component("Product", {
             </div>
 
             <div class="product-info">
-                <h1>{{id}}</h1>
-                <p> {{product.name}} </p>
+                <h1>{{product.name}} </h1>
+                
                 <p> {{product.description}} </p>
                 <p> RAM: {{product.ram}} GB,  ROM: {{product.rom}} GB,  Screen: {{product.display}} inches</p>
                 <p> MRP: INR {{product.mrp}}, Discount: {{product.discount * 100}}%</p>
