@@ -23,6 +23,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.js"></script> 
     -->
 
+    <script src="/assets/js/vue-scrollto.js"></script>
 
 
 </head>
@@ -36,8 +37,10 @@
     <div id="app">
         <div class="product-list">
             <span class="popular_product">Popular: </span>
-            <span class="item noselect" v-for="item, index in products" :key="index" @click="setProductId(item.id)"
-                v-if="item.discount > 0.20 ">{{item.name}}</span>
+
+            <!-- @click="setProductId(item.id)" -->
+            <span class="item noselect" v-for="item, index in products" :key="index" v-if="item.discount > 0.20 "
+                v-scroll-to="'#productId' + item.id">{{item.name}}</span>
         </div>
 
         <Cart :products="cartProduct" :allproducts="products"></Cart>

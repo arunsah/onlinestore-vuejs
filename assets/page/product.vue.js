@@ -1,7 +1,7 @@
 var online_store_product = Vue.component("Product", {
     template: `
     <div>
-        <div class="product-card">
+        <div class="product-card" :id="productId">
             <div class="product-image">
                 <img align="center" class="product-img" width="200" height="250" v-bind:src="image_src" />
             </div>
@@ -45,7 +45,7 @@ var online_store_product = Vue.component("Product", {
         product: { type: Object }
     },
     data() {
-        return { reviews: [], showReviewForm: false, localcart: 0 };
+        return { reviews: [], showReviewForm: false, localcart: 0, productId:null };
     },
     computed: { // results are saved untill dependencies are chenaged        
         image_src() {
@@ -66,5 +66,8 @@ var online_store_product = Vue.component("Product", {
             this.localcart -= 1;
             this.$emit('remove-from-cart', this.product.id);
         }
+    },
+    mounted(){
+        this.productId = "productId" + this.product.id;
     }
 });
