@@ -98,10 +98,10 @@ body {
 
 .cart-box {
     margin-right: 25px;
-    width: 200px;
     float: right;
     border: 1px solid #d8d8d8;
     padding: 5px 20px;
+    margin-bottom: 5px;
 }
 
 .button {
