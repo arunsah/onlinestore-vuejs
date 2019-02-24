@@ -16,11 +16,11 @@ const app = new Vue({
             this.cartProduct.push(this.productId);
         },
         addToCart(productId) {
-            console.log("adding : " + productId);
+            //console.log("adding : " + productId);
             this.cartProduct.push(productId);
         },
         removeFromCart(productId) {
-            console.log("removing : " + productId);
+            //console.log("removing : " + productId);
             var index = this.cartProduct.indexOf(productId);
             if (index > -1) {
                 this.cartProduct.splice(index, 1);

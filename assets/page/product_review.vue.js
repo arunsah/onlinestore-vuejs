@@ -60,7 +60,7 @@ var online_store_product = Vue.component("ProductReview", {
             this.userName = null;
             this.review = null;
             this.rating = null;
-            console.log(productReview);
+            //console.log(productReview);
         }
     }
 });

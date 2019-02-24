@@ -46,16 +46,16 @@ var online_store_cart = Vue.component("Cart", {
                     cartItemMap.set(productId, 1);
                 } else {
                     var value = cartItemMap.get(productId) + 1;
-                    console.log(value + "value");
+                    //console.log(value + "value");
                     cartItemMap.set(productId, value);
                 }
 
-                console.log('productId: ' + productId + ", " +
-                    'productName: ' + product.name + ", " +
-                    'Mrp: ' + product.mrp + ", " +
-                    'discount: ' + product.discount + ", " +
-                    'sum: ' + sum + ", " +
-                    'totalSum: ' + totalSum + ";");
+                /*  console.log('productId: ' + productId + ", " +
+                     'productName: ' + product.name + ", " +
+                     'Mrp: ' + product.mrp + ", " +
+                     'discount: ' + product.discount + ", " +
+                     'sum: ' + sum + ", " +
+                     'totalSum: ' + totalSum + ";"); */
 
             }
             //console.log(this.products);
@@ -80,11 +80,12 @@ var online_store_cart = Vue.component("Cart", {
 
             this.showItem = [];
             for (const [id, count] of cartItemMap.entries()) {
-                console.log(id, count);
+                //console.log(id, count);
                 var product = this.productMap.get(id);
                 this.showItem.push(count + "x " + product.name);
             }
 
+            totalSum = parseFloat(totalSum).toFixed(2);
             return totalSum;
 
         }
