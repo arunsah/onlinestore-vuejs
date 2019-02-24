@@ -1,8 +1,9 @@
 var online_store_cart = Vue.component("Cart", {
     template: `
     <div class="cart-box">
-        <span> Cart( {{showItem}} )</span>
-        <span> Rs. {{cartValues}} </span>
+        <span> In Cart: </span>
+        <span> {{showItem}} </span>
+        <span> Total Rs. <b>{{cartValues}}</b> </span>
     </div>
     `,
     props: {

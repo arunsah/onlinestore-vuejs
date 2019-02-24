@@ -90,6 +90,24 @@ body {
     align-content: space-around;
 }
 
+.product-review label{
+    font-weight: bold;
+    font-size: small;
+}
+
+.product-review input[type="text"], input[type="radio"], .custom-select, textarea{
+    font-weight: bold;
+    font-size: small;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 2px;
+    border: #1e95ea 2px solid;
+    box-shadow: 0px 5px 10px #d8d8d8;
+    background-color: white;
+
+}
+
+
 .color-box {
     width: 40px;
     height: 40px;
@@ -102,6 +120,10 @@ body {
     border: 1px solid #d8d8d8;
     padding: 5px 20px;
     margin-bottom: 5px;
+    text-align: left;
+    font-size: 14px;
+    position: static;
+    right: 0;
 }
 
 .button {
@@ -146,7 +168,6 @@ body {
 }
 
 .review-form {
-    width: 100%;
     padding: 20px;
     margin: 40px;
     border: 1px solid #d8d8d8;
