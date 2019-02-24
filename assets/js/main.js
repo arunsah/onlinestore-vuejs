@@ -34,14 +34,10 @@ const app = new Vue({
             .then(json => {
                 //console.log(json);
                 this.products = json.products;
-
-                
-                
-                var result = new Map(json.products.map(i => [i.id, i.name]));
-                console.log("Result is: " + JSON.stringify([...result])); 
-
-                console.log( result);
-                console.log( result.get(1));
+                this.productMap = new Map(json.products.map(i => [i.id, i]));
+                //console.log("Result is: " + JSON.stringify([...result])); 
+                //console.log( result);
+                //console.log( result.get(1));
 
             })
             .catch(error => console.error(error));;

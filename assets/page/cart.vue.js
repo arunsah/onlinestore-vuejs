@@ -1,41 +1,22 @@
 var online_store_cart = Vue.component("Cart", {
     template: `
     <div class="cart-box">
-        <span> Cart( {{products}} )</span>
+        <span> Cart( {{showItem}} )</span>
         <span> Rs. {{cartValues}} </span>
     </div>
     `,
     props: {
         products: { type: Array },
-        allproducts: { type: Array }
+        productMap: { type: Map }
     },
     data() {
-        return { showItem: [], productMap: null };
+        return { showItem: [] };
     },
     created() {
-        /* this.productMap = this.allproducts.reduce((productMap, obj) => {
-            // productMap[obj.key] = obj.val;
-            productMap.set(obj.key, obj.val);
-            return productMap;
-        }, new Map());
 
-        console.log(this.productMap);
-        console.log(this.productMap.size); */
     },
     watch: {
-        allproducts: function (oldValue, newValue) {
-            console.log('Prop changed: ', newValue, ' | was: ', oldValue);
-            this.productMap = newValue.reduce((pm, obj) => {
-                // productMap[obj.key] = obj.val;
-                pm.set(obj.key, obj.val);
-                return pm;
-            }, new Map());
-    
-            console.log(this.productMap);
-            console.log(this.productMap.size); 
-            console.log(newValue);
-            console.log(oldValue);
-        }
+
     },
 
     methods: {
@@ -47,6 +28,24 @@ var online_store_cart = Vue.component("Cart", {
             this.showItem = [];
             // todo: optimized this loops
             var totalSum = 0;
+            for (var i = 0; i < this.products.length; ++i) {
+                var productId = this.products[i];
+                var product = this.productMap.get(productId);
+                var sum = product.mrp - (product.mrp * product.discount);
+                this.showItem.push(product.name + " at " + sum);
+                totalSum += sum;
+                
+                console.log('productId: ' + productId + ", " +
+                'productName: ' + product.name + ", " +
+                'Mrp: ' + product.mrp + ", " +
+                'discount: ' + product.discount + ", " +
+                'sum: ' + sum + ", " +
+                'totalSum: ' + totalSum + ";" );
+
+            }
+            //console.log(this.products);
+            //console.log(this.productMap);
+
             /* for (var i = 0; i < this.products.length; ++i) {
                 var outerid = this.products[i];
                 for (var j = 0; j < this.allproducts.length; ++j) {
