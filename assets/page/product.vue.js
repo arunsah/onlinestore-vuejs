@@ -20,8 +20,8 @@ var online_store_product = Vue.component("Product", {
             </div>
 
           
-            
-            <div>
+            <br/>
+            <div class="product-review">
             <h2> Product Reviews </h2>
             <p v-if="!reviews.length">Be the first to review this product</p>
             <ul>
@@ -32,8 +32,8 @@ var online_store_product = Vue.component("Product", {
                 </li>
             </ul>
 
-           
-            <ProductReview @review-submitted="addReview"></ProductReview>
+            <button class="button" @click="showReviewForm = !showReviewForm">Show/Hide Review Form</button>
+            <ProductReview v-show="showReviewForm" @review-submitted="addReview"></ProductReview>
             </div>
 
         </div>

@@ -84,6 +84,12 @@ body {
     align-content: space-around;
 }
 
+.product-review {
+    margin: 10px;
+    width: 90%;
+    padding: 20px;
+    align-content: space-around;
+}
 
 .color-box {
     width: 40px;
