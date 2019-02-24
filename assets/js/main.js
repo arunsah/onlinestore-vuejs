@@ -2,6 +2,7 @@ const app = new Vue({
     el: '#app',
     data: {
         products: [],
+        productMap: null,
         productId: 0,
         currentProduct: {},
         cartProduct: []
@@ -33,6 +34,15 @@ const app = new Vue({
             .then(json => {
                 //console.log(json);
                 this.products = json.products;
+
+                
+                
+                var result = new Map(json.products.map(i => [i.id, i.name]));
+                console.log("Result is: " + JSON.stringify([...result])); 
+
+                console.log( result);
+                console.log( result.get(1));
+
             })
             .catch(error => console.error(error));;
 
