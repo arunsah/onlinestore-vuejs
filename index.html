@@ -36,8 +36,7 @@
     <div id="app">
         <div class="product-list">
             <span class="popular_product">Popular: </span>
-            <span class="item noselect" v-for="item, index in products" :key="index"
-                @click="setProductId(item.id)"
+            <span class="item noselect" v-for="item, index in products" :key="index" @click="setProductId(item.id)"
                 v-if="item.discount > 0.20 ">{{item.name}}</span>
         </div>
 
@@ -45,20 +44,15 @@
         <br />
         <br />
 
-        <Product 
-        v-for="item, index in products" 
-        :product="item" 
-        :key="index"
-        @add-to-cart="addToCart"
-        @remove-from-cart="removeFromCart"
-        ></Product>
+        <Product v-for="item, index in products" :product="item" :key="index" @add-to-cart="addToCart"
+            @remove-from-cart="removeFromCart"></Product>
     </div>
     <script src="/assets/page/cart.vue.js"></script>
     <script src="/assets/page/product_review.vue.js"></script>
     <script src="/assets/page/product.vue.js"></script>
     <script src="/assets/js/main.js"></script>
 
-    
+
 
 </body>
 

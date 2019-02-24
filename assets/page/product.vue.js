@@ -57,8 +57,8 @@ var online_store_product = Vue.component("Product", {
         addReview(productReview) {
             this.reviews.push(productReview);
         },
-        addToCart() { 
-            this.localcart += 1; 
+        addToCart() {
+            this.localcart += 1;
             this.$emit('add-to-cart', this.product.id);
         },
         removeFromCart() {

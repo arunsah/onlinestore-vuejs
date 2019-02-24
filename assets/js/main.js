@@ -4,7 +4,7 @@ const app = new Vue({
         products: [],
         productId: 0,
         currentProduct: {},
-        cartProduct:[]
+        cartProduct: []
     },
 
     methods: {
@@ -14,11 +14,11 @@ const app = new Vue({
             this.currentProduct = this.products[productId];
             this.cartProduct.push(this.productId);
         },
-        addToCart(productId){
+        addToCart(productId) {
             console.log("adding : " + productId);
             this.cartProduct.push(productId);
         },
-        removeFromCart(productId){
+        removeFromCart(productId) {
             console.log("removing : " + productId);
             var index = this.cartProduct.indexOf(productId);
             if (index > -1) {
@@ -34,11 +34,11 @@ const app = new Vue({
                 //console.log(json);
                 this.products = json.products;
             })
-            .catch(error => console.error(error));  ;
+            .catch(error => console.error(error));;
 
     },
 
-    computed:{ // results are saved untill dependencies are chenaged
+    computed: { // results are saved untill dependencies are chenaged
         /* productRate(){
             return 'Price: ' +this.currentFruit.price+
              ' for ' + this.currentFruit.quantity;
