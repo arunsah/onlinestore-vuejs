@@ -37,7 +37,8 @@
         <div class="product-list">
             <span class="popular_product">Popular: </span>
             <span class="item noselect" v-for="item, index in products" :key="index"
-                @click="setProductId(item.id)">{{item.name}}</span>
+                @click="setProductId(item.id)"
+                v-if="item.discount > 0.20 ">{{item.name}}</span>
         </div>
 
         <Cart :products="cartProduct" :allproducts="products"></Cart>
